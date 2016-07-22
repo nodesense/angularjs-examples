@@ -1,0 +1,14 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "name": "Apple",
+      "email": "support@apple2.com"
+    },
+    {
+      "id": 2,
+      "name": "Google",
+      "email": "support@google.com"
+    }
+  ]
+}

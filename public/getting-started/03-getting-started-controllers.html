@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+ 
+  <meta charset="utf-8">
+  <title>AngularJS-Getting Started Interactive</title>
+  <meta name="description" content="AngularJS-NodeSen.se">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+      <div ng-controller="ProductController">
+        
+        <label for="q">Search</label>
+        <input ng-model="q">
+        
+        <ul>
+        <li ng-repeat="name in products | filter:q">
+        {{name}}
+        </li>
+        </ul>
+
+        <p>
+        Now we have first named ng-app "myApp" and first controller, embeded inside HTML, but works still a bad practice mixing JS and HTML in same code
+        </p>
+      
+      </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+
+  <script type="text/javascript">
+  angular.module("myApp", [])
+  .controller("ProductController", function($scope){
+    $scope.products = ['iPhone', 'Nexus', 'MotoG', 'H2'];
+  })
+  </script>
+</body>
+</html>

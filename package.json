@@ -1,0 +1,32 @@
+{
+  "name": "angularjspro",
+  "version": "1.0.0",
+  "description": "AngularJS.Pro Professional Training Content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://krish@bitbucket.org/krish/angularjspro.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "Node.js",
+    "Web"
+  ],
+  "author": "Gopalakrishnan Subramani <gopalakrishnan.subramani@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/krish/angularjspro#readme",
+  "dependencies": {
+    "json-server": "^0.8.14",
+    "angular": "^1.5.7"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.5",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0"
+  }
+}

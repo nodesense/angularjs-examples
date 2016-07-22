@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+ 
+  <meta charset="utf-8">
+  <title>AngularJS-Getting Started Interactive</title>
+  <meta name="description" content="AngularJS-NodeSen.se">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="eleven columns" style="margin-top: 5%">
+       
+         <div ng-controller="ProductController">
+            <ul>
+              <li ng-repeat="product in products">
+                {{product.name}}
+              </li>
+            </ul>
+         </div>
+
+          </div>
+      </div><!--row -->
+      <div class="row">
+      <div class="eleven columns" style="margin-top: 5%">
+          Brand Controller is coming from extended module with same name
+              <div ng-controller="BrandController">
+            <ul>
+              <li ng-repeat="brand in brands">
+                {{brand.name}}
+              </li>
+            </ul>
+         </div>
+       
+     
+      </div>
+      </div><!--row -->
+    </div> 
+    
+    
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/app.product.js"></script>
+  <script type="text/javascript" src="js/app.brand.js"></script>
+</body>
+</html>

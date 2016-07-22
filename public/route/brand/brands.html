@@ -1,0 +1,21 @@
+﻿<h2>Brand</h2>
+
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+    </tr>
+
+    <tr ng-repeat="brand in brands" >
+        <td>
+            <a href="#/brands/{{brand.id}}">
+               {{brand.name}}
+             </a>  
+        </td>
+        <td>{{brand.email}}</td> 
+
+        <td><a href="#/brands/edit/{{brand.id}}">Edit</a></td>
+
+    </tr>
+    
+</table>

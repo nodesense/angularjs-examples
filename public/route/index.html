@@ -1,0 +1,77 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>AngularJS-Training</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+ 
+  <link rel="stylesheet" href="../css/style.css">
+ 
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+
+       
+
+  <div class="container" >
+   
+    <div class="row">
+ 
+       <div class="one-forth column" style="margin-top: 2%">
+        <a href="#/">Home</a>
+         <a href="#/products">Products</a>
+         
+         <a href="#/brands">Brands</a>
+
+         <a href="#/users">Users</a>
+      </div>
+    </div>
+ 
+    <div class="row">
+ 
+       <div class="one-forth column" style="margin-top: 2%">
+        
+        <ng-view >
+            Loading..
+        </ng-view>
+        
+      </div>
+    </div>
+
+  </div>
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="../libs/angular-resource.js"></script>
+  <script type="text/javascript" src="../libs/angular-route.js"></script>
+
+  <script type="text/javascript" src="product/product.controllers.js"></script>
+  <script type="text/javascript" src="product/product.module.js"></script>
+  
+  <script type="text/javascript" src="brand/brand.controllers.js"></script>
+  <script type="text/javascript" src="brand/brand.module.js"></script>
+
+  <script type="text/javascript" src="home/home.controllers.js"></script>
+  <script type="text/javascript" src="home/home.module.js"></script>
+
+  <script type="text/javascript" src="users/users.controllers.js"></script>
+  <script type="text/javascript" src="users/users.module.js"></script>
+
+
+
+  <script type="text/javascript" src="app.module.js"></script>
+ 
+</body>
+</html>
+
+
+ 

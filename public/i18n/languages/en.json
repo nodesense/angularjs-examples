@@ -1,0 +1,7 @@
+ {
+    "HEADLINE": "Hello there, This is my awesome app!",
+    "INTRO_TEXT": "And it has i18n support!",
+    "HTML_TEXT":"<h1>Tring to inject HTML to hack the site</h1>",
+    "BUTTON_TEXT_EN": "english",
+    "BUTTON_TEXT_DE": "german"
+  }

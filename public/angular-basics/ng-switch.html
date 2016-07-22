@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+ 
+  <meta charset="utf-8">
+  <title>AngularJS-Getting Started Interactive</title>
+  <meta name="description" content="AngularJS-NodeSen.se">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 10%">
+       
+        <p>
+        <strong>ng-switch</strong> 
+         The ngSwitch directive is used to conditionally swap DOM elements on based on expression. 
+         Elements within ngSwitch but without ngSwitchWhen or ngSwitchDefault directives will be preserved at 
+         the location as specified in the template.
+        </p>
+        <form>
+       
+
+    <div class="twelve columns">
+      <label for="direction"> Pick Direction</label>
+      
+      <select name="direction" ng-model="direction">
+        <option value="OneWay" >One Way </option>
+        <option value="RoundTrip" >Round Trip</option>
+      </select>
+
+
+      <div ng-switch="direction">
+        <p>
+          Fixed content shown here for ng-switch, no matter, how ng-switch-when or ng-switch-default resolves
+          </p>
+        <div ng-switch-when="OneWay">
+          Location
+          <input type="text" value="Bangalore" />
+          Pick a Journey Date
+          <input placeholder="2016-12-20" />
+        </div>
+        <div ng-switch-when="RoundTrip">
+          Location
+          <input type="text" value="Bangalore" />
+          Pick a Journey Date
+          <input placeholder="2016-12-20" />
+
+          Location
+          <input type="text" value="Delhi" />
+          Pick a Return Date
+          <input placeholder="2016-12-25" />
+        </div>
+        <div ng-switch-default>
+          we shall ship you to mars with <strong>ng-switch-default</strong> if you don't pick right mode
+
+          Location
+          <input type="text" value="Mars" />
+          Pick a Journey Date
+          <input placeholder="2020-Jan-01" />
+        </div>
+      </div>
+
+
+
+     
+    </div>
+
+    
+        </form>
+     
+      </div>
+      </div>
+    </div> <!--row -->
+    
+    
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

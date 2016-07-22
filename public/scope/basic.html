@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>AngularJS-Training</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+ 
+  <link rel="stylesheet" href="../css/style.css">
+ 
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+ 
+  <div class="container">
+ 
+    <div class="row">
+ 
+      <div class="six  columns" style="margin-top: 10%">
+        <div ng-controller="GrandParentController" >
+             <p>
+                <span><strong>Grand Parent</strong></span>
+                <ul>
+                    <li>commonForAll => {{commonForAll}}</li>
+                    <li>parentAndChildren => {{parentAndChildren}}</li>
+                    <li>childOnly => {{childOnly}}</li>
+                  </ul>
+                  <button ng-click="sendMessageToChildren()">Broadcast</button>
+                    <button ng-click="sendMessageToParent()">Emit</button>
+
+               <p>{{message}}</p>
+               </p>
+          <div ng-controller="ParentController" >
+             
+             <p>
+                <span><strong>Parent</strong></span>
+                <ul>
+                    <li>commonForAll => {{commonForAll}}</li>
+                    <li>parentAndChildren => {{parentAndChildren}}</li>
+                    <li>childOnly => {{childOnly}}</li>
+                  </ul>
+                  <!-- calls Parent::sendMessageToChildren() -->
+                  <button ng-click="sendMessageToChildren()">Broadcast</button>
+                  <button ng-click="sendMessageToParent()">Emit</button>
+
+               <p>{{message}}</p>
+               </p>
+
+           <div ng-controller="ChildController" >
+               <p>
+                <span><strong>Child</strong></span>
+                <ul>
+                    <li>commonForAll => {{commonForAll}}</li>
+                    <li>parentAndChildren => {{parentAndChildren}}</li>
+                    <li>childOnly => {{childOnly}}</li>
+                     <button ng-click="sendMessageToParent()">Emit</button>
+
+                    <p>{{message}}</p>
+                  </ul>
+               </p>
+         </div>
+
+         </div>
+
+        </div>
+      </div>
+ 
+  
+    
+ 
+    </div>
+
+  </div>
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/basic.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+//https://www.youtube.com/watch?v=f7lIBiLmISQ
+//http://code.ciphertrick.com/2015/08/03/angularjs-unit-testing-tutorial-karma-jasmine/
+
+npm init
+npm install angular --save
+npm install  karma --save-dev
+npm install karma-jasmine jasmine-core --save-dev
+npm install angular-mocks --save-dev
+npm install karma-phantomjs-launcher --save-dev
+karma init -> choose/type jasmin, no, PhantomJS,app/*.js, tests/*.js
+npm install phantomjs-prebuilt
+npm install karma --save-dev
+
+changes to karma.init -> add location of angularjs and mock in files array
+
+files: [
+      'node_modules/angular/angular.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'app/*.js',
+      'tests/*.js'
+    ],
+
+
+
+npm install
+
+npm install -g karma-cli
+npm install -g phantomjs-prebuilt
+
+
+
+
+

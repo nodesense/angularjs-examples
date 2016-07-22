@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>AngularJS-Getting Started Interactive</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+      <div ng-init="products=['iPhone', 'Nexus', 'MotoG', 'H2']">
+        
+        <label for="q">Search</label>
+        <input ng-model="q">
+        
+        <ul>
+        <li ng-repeat="name in products | filter:q">
+        <a href="/{{name}}">{{name}}</a>
+        </li>
+        </ul>
+
+        <p>
+        AngularJS add/remove DOM elements at runtime. Type on the text to see how elements are added or removed. DOM Manipulation are managed by 'Directives'
+        </p>
+      
+      </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+</body>
+</html>

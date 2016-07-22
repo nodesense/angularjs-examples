@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+ 
+  <meta charset="utf-8">
+  <title>AngularJS-Getting Started Interactive</title>
+  <meta name="description" content="AngularJS-NodeSen.se">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+
+  <script type="text/ng-template" id="partial1.html">
+    Partial Content 1
+    <p>Template 1</p>
+     Template Name  <h4>{{partialName}}</h4>
+  </script>
+
+
+  <script type="text/ng-template" id="partial2.html">
+    Partial Content 2
+
+   Template Name  <h4>{{partialName}}</h4>
+  </script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 10%">
+        <p>
+          <div ng-include="'partial1.html'">
+          </div>
+
+          <div ng-include="'partial2.html'">
+          </div>
+          </p>
+      </div>
+      </div> <!--row -->
+ 
+        <div class="row">
+      <div class="one-half column" style="margin-top: 10%">
+        Dynamic Templates
+        <p>
+           <select ng-model="partialName" >
+              <option value="partial1.html">Partial 1</option>
+              <option value="partial2.html">Partial 2</option>
+           </select>
+          </p>
+
+          <div ng-include='partialName'> </div>
+      </div>
+      </div> <!--row -->
+
+    </div> 
+    
+    
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

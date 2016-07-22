@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "name": "iPhone 5",
+      "brand": "Apple",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "iPhone 5",
+      "brand": "Apple"
+    },
+    {
+      "id": 3,
+      "name": "iPhone 6",
+      "brand": "Apple"
+    },
+    {
+      "name": "LG G2",
+      "brand": "LG",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "name": "Lumia",
+      "brand": "Microsoft"
+    },
+    {
+      "name": "MotoG",
+      "brand": "Motorola",
+      "id": 8
+    },
+    {
+      "name": "MotoG",
+      "brand": "Motorola",
+      "id": 9
+    }
+  ]
+}

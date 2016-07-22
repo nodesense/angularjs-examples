@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+ 
+  <meta charset="utf-8">
+  <title>AngularJS-Directives</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+       <p><h2>Directives - Scope</h2></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+          <div ng-controller="ProductController">
+            <p>By default directives share parent scope, placed inside container tag</p>
+            <!-- using directives as element -->
+            <div>
+                <my-product></my-product>
+            </div>
+            <!-- using directives as attribute -->
+            <div my-product></div> 
+          </div>
+      </div>
+    </div>
+
+       <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+          <div ng-controller="ProductController">
+            <p>Use replace : true, restrict to limit directives use with element and attribute</p>
+             
+            
+                    <my-product-info>
+                        both cluding tag my-product-info and this content shall be replaced
+                    </my-product-info>
+                  
+
+                    <div my-product-info>
+                        Default Content, this shall be replaced by directive content
+                    </div>
+            </p>
+           
+          </div>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+          <div ng-controller="ProductController">
+            <p>Use scope : true, to get new scope and inherit from parent scope</p>
+             
+            
+                    <my-product-info-extended>
+                         
+                    </my-product-info-extended>
+                  
+ 
+            </p>
+           
+          </div>
+      </div>
+    </div>
+
+
+
+     <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+          <div ng-controller="ProductController">
+            <p>Use scope : {}, to create a new siolated scope</p>
+             
+            
+                    <my-product-info-isolated>
+                         
+                    </my-product-info-isolated>
+                  
+ 
+            </p>
+           
+          </div>
+      </div>
+    </div>
+
+
+   <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+          <div ng-controller="ProductController" >
+            <p>Use scope : {}, to create isolated scope, assign properties via directives</p>
+             
+            
+                    <my-product-info-isolated-external info="product2">
+                         
+                    </my-product-info-isolated-external>
+                  
+ 
+            </p>
+           
+          </div>
+      </div>
+    </div>
+
+  </div>
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/scope.js"></script>
+</body>
+</html>

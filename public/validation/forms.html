@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>AngularJS-Training</title>
+  <meta name="description" content="AngularJS-Validation">
+  <meta name="author" content="krish@nodesen.se">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+ <style>
+      .username.ng-valid {
+          background-color: lightgreen;
+      }
+      .username.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .username.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+ 
+      .email.ng-valid {
+          background-color: lightgreen;
+      }
+      .email.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .email.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+ 
+</style>
+
+</head>
+<body>
+ 
+   
+<body ng-controller="AppController as ctrl">
+       
+      <form ng-submit="ctrl.submit()" name="myForm">
+          <input type="text" ng-model="ctrl.user.username"
+		  name="uname" class="username" 
+		  placeholder="Enter your name" 
+		  required ng-minlength="3"
+		  
+		  />
+              <span ng-show="myForm.$dirty && myForm.uname.$error.required">
+				This is a required field
+			  </span>
+              <span ng-show="myForm.$dirty && myForm.uname.$error.minlength">
+			  Minimum length required is 4</span>
+              <span ng-show="myForm.$dirty && myForm.uname.$invalid">
+			  This field is invalid </span><br/><br/>
+             
+          <input type="text" ng-model="ctrl.user.address" placeholder="Enter your Address"/><br/><br/>
+ 
+          <input type="email" ng-model="ctrl.user.email" name="email" class="email" placeholder="Enter your Email" required/>
+              <span ng-show="myForm.$dirty && myForm.email.$error.required">This is a required field</span>
+              <span ng-show="myForm.$dirty && myForm.email.$invalid">This field is invalid </span><br/><br/>
+           
+          <input type="submit"  value="Submit" ng-disabled="myForm.$invalid">
+      </form>
+       
+       
+      
+ <script type="text/javascript" src="../libs/angular.js"></script>
+
+      <script>
+          angular.module('myApp', [])
+          .controller('AppController', [function() {
+              var self = this;
+              self.submit = function() {
+                  console.log('Form is submitted with following user', self.user);
+            };
+      }]);
+  </script>
+ 
+</body>
+</html>

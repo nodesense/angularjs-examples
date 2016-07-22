@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Our uiRouterSample module defined here -->
+<html lang="en" ng-app="uiRouterSample">
+
+  <!-- Our uiRouterSample module defined here -->
+  <head>
+    <script src="../libs/angular.js"></script>
+    <script src="../libs/angular-animate.js"></script>
+    <meta charset="utf-8" />
+    <!-- using twitter bootstrap, but of course -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap.min.css" />
+    <!-- styles for ng-animate are located here -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!-- Include angular.js, angular-animate.js and angular-ui-router.js-->
+    <script src="angular-ui-router.js"></script>
+    <!-- app.js declares the uiRouterSample module and adds items to $rootScope, and defines
+         the "home" and "about" states
+    -->
+    <script src="app/app.js"></script>
+    <!-- contacts.js declares the uiRouterSample.contacts module, and adds a number of contact
+         related states 
+    -->
+    <script src="app/contacts/contacts.js"></script>
+    <!-- contacts-service.js, and utils-service.js define services for use by the 
+         uiRouterSample.contacts module.
+    -->
+    <script src="app/contacts/contacts-service.js"></script>
+    <script src="common/utils/utils-service.js"></script>
+    <!-- could easily use a custom property of the state here instead of 'name' -->
+    <title ng-bind="$state.current.name + ' - ui-router'">ui-router</title>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+         
+          <a class="brand" ui-sref="home">ui-router</a>
+          <ul class="nav">
+           
+            <li ng-class="{active: $state.includes('contacts')}">
+              <a ui-sref="contacts.list">Contacts</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="about">About</a>
+            </li>
+          </ul>
+          <!-- Here is a named ui-view. ui-views don't have to be named, but we'll populate this
+             one from various different child states and we want a name to help us target. -->
+          <p ui-view="hint" class="navbar-text pull-right"></p>
+        </div>
+      </div>
+    </div>
+    <!-- main ui-view (unnamed) and will be populated by its immediate children's templates
+         unless otherwise explicitly named views are targeted. It's also employing ng-animate. -->
+    <div ui-view="" class="container slide" style="padding-top: 80px;"></div>
+    
+   
+  </body>
+
+</html>

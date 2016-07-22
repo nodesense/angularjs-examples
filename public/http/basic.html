@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>AngularJS-Training</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+ 
+  <link rel="stylesheet" href="../css/style.css">
+ 
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+ 
+  <div class="container"  ng-controller="ProductController">
+    <div class="row">
+        
+        <div class="one-forth column" style="margin-top: 10%">
+          <button ng-click="getAllProducts()">Get All Products</button>
+           <button ng-click="get404NotFound()">404 Not Found</button>
+           <button ng-click="newProduct()">New Product</button>
+
+           <button ng-click="specialAPI()">Special API Interceptor</button>
+        </div>
+         <div class="two-forth column" style="margin-top: 10%">
+        <div >
+             <p>HTTP Status Code {{statusCode}}</p>
+             <p>HTTP Status Text {{statusText}}</p>
+             <p>HTTP Content-Length {{contentLength}}</p>
+             <p>HTTP Content-Type {{contentType}}</p>
+            <ul>
+
+           <table>
+             <tr>
+             <th>ID</th>
+             <th>Name</th>
+             <th>Brand</th>
+
+             <th>Del</th>
+             </tr>
+
+             <tr ng-repeat="product in products | orderBy:'+name'">
+              <td> <a href="" ng-click="getProduct(product.id)">{{product.id}}</a> </td>
+              <td> {{product.name}}</td>
+              <td> {{product.brand}}</td>
+              <td> {{product.brand}}</td>
+              <td> <a href="" ng-click="deleteProduct(product.id)">Delete</a></td>
+             </tr>
+            
+
+             </table>   
+          
+          </div>
+      </div>
+
+      
+ 
+    </div>
+
+      <div class="row">
+        <div class="one-forth column" style="margin-top: 10%">
+            <form ng-if="product">
+              Name
+                <input ng-model="product.name" /> 
+              ID
+                <input ng-model="product.id" readonly /> 
+              Brand
+                <input ng-model="product.brand" /> 
+
+                <button ng-click="updateProduct()">Update</button>
+              </form> 
+
+              
+        </div>
+      </div>
+
+  </div>
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/basic.js"></script>
+</body>
+</html>

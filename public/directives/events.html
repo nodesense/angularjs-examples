@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+ 
+  <meta charset="utf-8">
+  <title>AngularJS-Directives</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+       <p><h2>Directives - Events</h2></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="one-half column" style="margin-top: 5%">
+          <div ng-controller="ProductController">
+            <p>By default directives share parent scope, placed inside container tag</p>
+           
+           <replybox label="search"></replybox>
+            
+            {{message}}
+            <button double-click="Click" >Click Me </button>
+
+             <button double-click="Click2" >Click Me 2 </button>
+          </div>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/events.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+  
+  <meta charset="utf-8">
+  <title>AngularJS-Training</title>
+  <meta name="description" content="AngularJS-Validation">
+  <meta name="author" content="krish@nodesen.se">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+ <style>
+      .username.ng-valid {
+          background-color: lightgreen;
+      }
+      .username.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .username.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+ 
+      .email.ng-valid {
+          background-color: lightgreen;
+      }
+      .email.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .email.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+ 
+</style>
+
+</head>
+<body>
+ 
+   
+<body ng-controller="AppController as ctrl">
+       
+       
+<form name="exampleForm">
+<label>Email Address:</label>
+<input type="email" name="userEmail" ng-model="email" required />
+<div ng-messages="exampleForm.userEmail.$error">
+  <div ng-message="required">This field is required</div>
+  <div ng-message="email">Your email address is invalid</div>
+</div>
+ 
+
+
+
+
+<label>Phone Number:</label>
+<input type="email" name="userPhoneNumber" ng-model="phoneNumber" 
+       ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"
+       required/>
+<div ng-messages="exampleForm.userPhoneNumber.$error">
+  <div ng-message="required">This field is required</div>
+  <div ng-message="pattern">Must be a valid 10 digit phone number</div>
+</div>
+
+
+
+
+<label>User Message:</label>
+<textarea type="text" name="userMessage" ng-model="message" 
+          ng-minlength="20" ng-maxlength="50" required>
+</textarea>
+<div ng-messages="exampleForm.userMessage.$error">
+  <div ng-message="required">This field is required</div>
+  <div ng-message="minlength">Message must be over 20 characters</div>
+  <div ng-message="maxlength">Message must not exceed 50 characters</div>
+</div>
+ 
+
+</form>
+       
+       
+      
+ <script type="text/javascript" src="../libs/angular.js"></script>
+
+ <script type="text/javascript" src="../libs/angular-messages.js"></script>
+
+      <script>
+          angular.module('myApp', ['ngMessages'])
+          .controller('AppController', [function() {
+              var self = this;
+              self.submit = function() {
+                  console.log('Form is submitted with following user', self.user);
+            };
+      }]);
+  </script>
+ 
+</body>
+</html>

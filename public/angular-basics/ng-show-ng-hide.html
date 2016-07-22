@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+ 
+  <meta charset="utf-8">
+  <title>AngularJS-Getting Started Interactive</title>
+  <meta name="description" content="AngularJS-NodeSen.se">
+  <meta name="author" content="krish@nodesen.se">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 10%">
+      
+        
+         
+        <p>
+        <strong>ng-show, ng-hide</strong> directives helps to show/hide DOM element.
+         Elements are not removed from the DOM, instead hidden from view.
+            
+
+        </p>
+  <form>
+       
+
+    <div class="six columns">
+      <label for="toggle1"> Show when checked</label>
+      
+      <input type="checkbox" name="toggle1" class="u-full-width" checked  
+         ng-model="toggle1"  placeholder="toggle" />
+        <div ng-show="toggle1" >
+          This content is shown when the checkbox is clicked
+        </div> 
+    </div>
+
+   <div class="six columns">
+      <label for="toggle2"> Hide when checked</label>
+      
+      <input type="checkbox" name="toggle2" class="u-full-width"  ng-model="toggle2" checked placeholder="toggle" />
+        <div ng-hide="toggle2" >
+          This content is hidden when the checkbox is clicked
+        </div> 
+    </div> 
+ </form>
+     
+      </div>
+      </div>
+    </div> <!--row -->
+    
+ 
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

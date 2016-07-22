@@ -1,0 +1,11 @@
+{
+  "products": [
+    { "id": 1, "name": "iPhone", "brand": "Apple" },
+    { "id": 2, "name": "iPhone 5", "brand": "Apple" },
+    { "id": 3, "name": "iPhone 6", "brand": "Apple" },
+    { "id": 4, "name": "Nexus 5", "brand": "Google" },
+    { "id": 5, "name": "Nexus 6", "brand": "Google" },
+    { "id": 6, "name": "LG G3", "brand": "LG" },
+    { "id": 7, "name": "Lumia", "brand": "Microsoft" }
+  ]
+}

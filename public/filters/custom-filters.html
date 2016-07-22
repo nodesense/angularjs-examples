@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>AngularJS-Training</title>
+  <meta name="description" content="AngularJS-NodeSense">
+  <meta name="author" content="krish@nodesen.se">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container"  ng-controller="ProductController">
+    <div class="row">
+ 
+         <div class="one-third column" style="margin-top: 10%">
+        <div >
+             <ul>
+              <li>{{"race car" | reverse}}</li>
+              <li>{{"ABCDE" | reverse}}</li>
+             </ul>
+        </div>
+      </div>
+
+    <div class="one-third column" style="margin-top: 10%">
+        <div >
+             <ul>
+               <li ng-repeat="product in products | filter:customComparator">
+                {{product.name}}
+                 </li>
+             </ul>
+        </div>
+      </div>
+ 
+    </div>
+
+    </div>
+
+  
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="../libs/angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
