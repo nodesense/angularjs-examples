@@ -1,0 +1,36 @@
+
+<div class="row">
+<div class="twelve columns">
+    <p>Home page content</p>
+    <button ng-click="showSubPage()">Sub</button>
+    <button ng-click="showSubPage2()">Sub 2</button>
+    </div>
+</div>
+
+<div class="row">
+<div class="twelve columns">
+    <p>Navigation via ui-sref </p>
+    <a ui-sref="home.sub">ui-sref="home.sub"</a>
+    <a ui-sref="home.sub2">ui-sref="home.sub2"</a>
+    
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="twelve columns">
+    <p>Navigation via href/url </p>
+    <a href="#/home/sub">href="#/home/sub"</a>
+    <a href="#/home/sub2">href="#/home/sub2"</a>
+    </p>
+</div>
+</div>
+
+<ui-view></ui-view>
+
+
+
+<div ui-view="footer">
+    
+</div>
